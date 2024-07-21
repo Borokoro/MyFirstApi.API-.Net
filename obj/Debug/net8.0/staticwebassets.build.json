@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "rtGPvZDL1xEYa3BtBvRdnvcfdtnBYjS1/2EWiO3BA7I=",
+  "Source": "MyFirstApi.API",
+  "BasePath": "_content/MyFirstApi.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

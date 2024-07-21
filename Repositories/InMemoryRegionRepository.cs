@@ -1,0 +1,21 @@
+﻿/*using MyFirstApi.API.Models.Domain;
+
+namespace MyFirstApi.API.Repositories
+{
+    public class InMemoryRegionRepository : IRegionRepository
+    {
+        public async Task<List<Region>> GetAllAsync()
+        {
+            return new List<Region>()
+                {
+                new Region()
+                {
+                    Id = Guid.NewGuid(),
+                    Code = "GD",
+                    Name = "Gdansk",
+                }
+            };
+        }
+    }
+}
+ */
