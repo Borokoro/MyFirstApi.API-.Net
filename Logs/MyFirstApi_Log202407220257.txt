@@ -1,0 +1,29 @@
+2024-07-22 02:57:52.604 +02:00 [INF] User profile is available. Using 'C:\Users\marek\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2024-07-22 02:57:52.789 +02:00 [INF] Now listening on: https://localhost:7256
+2024-07-22 02:57:52.790 +02:00 [INF] Now listening on: http://localhost:5228
+2024-07-22 02:57:52.793 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-07-22 02:57:52.794 +02:00 [INF] Hosting environment: Development
+2024-07-22 02:57:52.795 +02:00 [INF] Content root path: C:\Users\marek\FirstWebApi\MyFirstApi\MyFirstApi.API
+2024-07-22 02:57:53.126 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/swagger/index.html - null null
+2024-07-22 02:57:53.249 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/swagger/index.html - 200 null text/html;charset=utf-8 125.8104ms
+2024-07-22 02:57:53.270 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/_vs/browserLink - null null
+2024-07-22 02:57:53.270 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/_framework/aspnetcore-browser-refresh.js - null null
+2024-07-22 02:57:53.280 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/_framework/aspnetcore-browser-refresh.js - 200 13764 application/javascript; charset=utf-8 10.4275ms
+2024-07-22 02:57:53.301 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/_vs/browserLink - 200 null text/javascript; charset=UTF-8 30.6109ms
+2024-07-22 02:57:53.338 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/swagger/favicon-16x16.png - null null
+2024-07-22 02:57:53.346 +02:00 [INF] Sending file. Request path: '/favicon-16x16.png'. Physical path: 'N/A'
+2024-07-22 02:57:53.349 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/swagger/favicon-16x16.png - 499 665 image/png 13.0326ms
+2024-07-22 02:57:53.360 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/swagger/v1/swagger.json - null null
+2024-07-22 02:57:53.433 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 73.9662ms
+2024-07-22 02:57:57.991 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7256/api/Regions - null null
+2024-07-22 02:57:58.025 +02:00 [INF] Executing endpoint 'MyFirstApi.API.Controllers.RegionsController.GetAll (MyFirstApi.API)'
+2024-07-22 02:57:58.034 +02:00 [INF] Route matched with {action = "GetAll", controller = "Regions"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetAll() on controller MyFirstApi.API.Controllers.RegionsController (MyFirstApi.API).
+2024-07-22 02:57:58.131 +02:00 [INF] GetAll action Method was invoked
+2024-07-22 02:57:58.640 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT [r].[Id], [r].[Code], [r].[Name], [r].[RegionImageUrl]
+FROM [Regions] AS [r]
+2024-07-22 02:57:58.677 +02:00 [INF] Finished getAllRegionRequest with data: [{"Id":"906cb139-415a-4bbb-a174-1a1faf9fb1f6","Code":"NSN","Name":"Nelson","RegionImageUrl":"https://images.pexels.com/photos/13918194/pexels-photo-13918194.jpeg?auto=compress\u0026cs=tinysrgb\u0026w=1260\u0026h=750\u0026dpr=1"},{"Id":"f7248fc3-2585-4efb-8d1d-1c555f4087f6","Code":"AKL","Name":"Auckland","RegionImageUrl":"https://images.pexels.com/photos/5169056/pexels-photo-5169056.jpeg?auto=compress\u0026cs=tinysrgb\u0026w=1260\u0026h=750\u0026dpr=1"},{"Id":"14ceba71-4b51-4777-9b17-46602cf66153","Code":"BOP","Name":"Bay Of Plenty","RegionImageUrl":null},{"Id":"6884f7d7-ad1f-4101-8df3-7a6fa7387d81","Code":"NTL","Name":"Northland","RegionImageUrl":null},{"Id":"f077a22e-4248-4bf6-b564-c7cf4e250263","Code":"STL","Name":"Southland","RegionImageUrl":null},{"Id":"cfa06ed2-bf65-4b65-93ed-c9d286ddb0de","Code":"WGN","Name":"Wellington","RegionImageUrl":"https://images.pexels.com/photos/4350631/pexels-photo-4350631.jpeg?auto=compress\u0026cs=tinysrgb\u0026w=1260\u0026h=750\u0026dpr=1"}]
+2024-07-22 02:57:58.681 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[MyFirstApi.API.Models.DTO.RegionDto, MyFirstApi.API, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2024-07-22 02:57:58.684 +02:00 [INF] Executed action MyFirstApi.API.Controllers.RegionsController.GetAll (MyFirstApi.API) in 647.5866ms
+2024-07-22 02:57:58.685 +02:00 [INF] Executed endpoint 'MyFirstApi.API.Controllers.RegionsController.GetAll (MyFirstApi.API)'
+2024-07-22 02:57:58.690 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7256/api/Regions - 200 null application/json; charset=utf-8 698.7848ms

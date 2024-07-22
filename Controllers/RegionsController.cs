@@ -9,6 +9,7 @@ using MyFirstApi.API.Data;
 using MyFirstApi.API.Models.Domain;
 using MyFirstApi.API.Models.DTO;
 using MyFirstApi.API.Repositories;
+using System.Text.Json;
 
 namespace MyFirstApi.API.Controllers
 {
@@ -19,26 +20,39 @@ namespace MyFirstApi.API.Controllers
         private readonly MyFirstApiDbContext dbContext;
         private readonly IRegionRepository regionRepository;
         private readonly IMapper mapper;
+        private readonly ILogger<RegionsController> logger;
 
         //ctor skrót do controllera
-        public RegionsController(MyFirstApiDbContext dbContext, IRegionRepository regionRepository, IMapper mapper)
+        public RegionsController(MyFirstApiDbContext dbContext, IRegionRepository regionRepository, IMapper mapper,ILogger<RegionsController> logger)
         {
             this.dbContext = dbContext;
             this.regionRepository = regionRepository;
             this.mapper = mapper;
+            this.logger = logger;
         }
         [HttpGet]
-        [Authorize(Roles ="Reader")]
+        //[Authorize(Roles ="Reader")]
         public async Task<IActionResult> GetAll()
         {
-            //Get data from database = Domain models
-            var regionsDomain = await regionRepository.GetAllAsync();
+            try
+            {
+                logger.LogInformation("GetAll action Method was invoked");
+                //Get data from database = Domain models
+                var regionsDomain = await regionRepository.GetAllAsync();
 
-            //Map domain models to dtos
-            var regionsDto=mapper.Map<List<RegionDto>>(regionsDomain);
-            //return dtos
+                //Map domain models to dtos
+                var regionsDto = mapper.Map<List<RegionDto>>(regionsDomain);
+                //return dtos
 
-            return Ok(regionsDto);
+                logger.LogInformation($"Finished getAllRegionRequest with data: {JsonSerializer.Serialize(regionsDomain)}");
+
+                return Ok(regionsDto);
+            }
+            catch (Exception e) 
+            {
+                logger.LogError(e, e.Message);
+                throw;
+            }
         }
 
         //Get single Region (Get Region By ID)
